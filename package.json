@@ -1,10 +1,11 @@
 {
   "homepage": "http://shakhovm.github.io/message_shop",
-  "name": "data_base_project",
+  "name": "message_shop",
   "version": "0.1.0",
   "private": true,
   "proxy": "http://localhost:8000",
   "dependencies": {
+    "@babel/runtime": "^7.10.2",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
