@@ -128,9 +128,15 @@ export default class Queries extends React.Component {
             data[e.name] = isNaN(e.value) ? e.value : parseInt(e.value);
         });
         console.log(data);
+
+
+        if ([...e.target.parentElement.getElementsByTagName("input")].length === 0) {
+            method = 'GET';
+        }
         let init = {
-          method: method
+            method: method
         };
+        console.log(method);
         console.log(`${DJANGO_URL}/${type}${next}`);
         if (method === 'POST') {
             init.body = JSON.stringify(data);

@@ -49,6 +49,7 @@ class Order extends React.Component {
         this.addUserToGroup = this.addUserToGroup.bind(this);
         this.startSale = this.startSale.bind(this);
         this.orderMessage = this.orderMessage.bind(this);
+        this.denyAccess = this.denyAccess.bind(this);
     }
 
     componentDidMount() {
@@ -135,7 +136,7 @@ class Order extends React.Component {
     }
 
     denyAccess(e) {
-        let select = e.target.getElementsByTagName('select');
+        let select = e.target.parentElement.getElementsByTagName('select');
         let groupId = select[1].value;
         this.props.denyAccess(localStorage.getItem("userId"), groupId, this.props.groupEditor);
         // fetch(DJANGO_URL +
@@ -180,7 +181,7 @@ class Order extends React.Component {
         let nodes = e.target.parentElement;
         let selects = nodes.getElementsByTagName("select");
         this.props.orderMessage(localStorage.getItem("userId"), selects[1].value,
-            nodes.getElementsByTagName("input")[0], selects[2].value, selects[0].value,
+            nodes.getElementsByTagName("input")[0].value, selects[2].value, selects[0].value,
             this.props.groupEditor)
         // let data = {
         //     style: selects[0].value,
@@ -240,7 +241,7 @@ class Order extends React.Component {
                         </select>
                         to author
                         <select>
-                            {this.state.authors.map(e => (<option value={e.id}>{e.username}</option>))}
+                            {this.state.authorGroups.map(e => (<option value={e.id}>{e.name}</option>))}
                         </select>
                     </div>
 

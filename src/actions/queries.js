@@ -66,8 +66,6 @@ export const holdSales = (sale, groupId) => {
 export const groupEditor = (groupId) => {
     return dispatch => fetch(DJANGO_URL + `/groups-editor/${groupId}/`)
         .then(resp => resp.json()).then(body => {
-            console.log("body");
-            console.log(body);
             return body[0].id
         })
 };
@@ -133,14 +131,6 @@ export const orderMessage = (customerId, groupId, text, styleId, networkId, grou
                     text: text,
                     access: body[0] === undefined ? "" : body[0]["access"]
                 };
-                // // console.log(body);
-                // for (let i = 0; i < body.length; ++i) {
-                //     let el = body[i];
-                //     if (el["social"] === networkId) {
-                //         data.access = el["id"];
-                //         break;
-                //     }
-                // }
 
                 fetch(DJANGO_URL + '/system_messages/', {
                     method: 'POST',
