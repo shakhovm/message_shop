@@ -1,0 +1,38 @@
+.main-nav {
+    text-align: center;
+    text-decoration: none;
+    /*position: fixed;*/
+    height: 40px;
+    background-color: #202020;
+    width: 100%;
+
+    /*float: left;*/
+}
+
+
+.main-nav .sidebar-item, .sidebar-item1, .sidebar-item2 {
+    text-align: center;
+    height: 20px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.main-nav .sidebar-item:hover, .sidebar-item1:hover, .sidebar-item2:hover {
+    background-color: #111111;
+}
+
+.nav-link {
+    text-decoration: none;
+    padding: 2px;
+    color: #ffffff;
+}
+
+.sidebar-item, .sidebar-item1, .sidebar-item2 {
+    float: left;
+    display: block;
+}
+
+
+.sidebar-item1 {
+    float: right
+}
