@@ -1,4 +1,4 @@
-export const DJANGO_URL = "http://localhost:8000";
+export const DJANGO_URL = "http://django-db10.herokuapp.com";
 
 export const CUSTOMER = "2";
 
